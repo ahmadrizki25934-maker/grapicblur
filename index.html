@@ -10,23 +10,15 @@
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
-<!-- ===== NEW FEATURE: Face Detection ===== -->
-<script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
 </head>
 
 <body>
 
 <div class="camera-container">
 
-    <video id="video" autoplay playsinline muted></video>
+    <video id="video" autoplay playsinline></video>
 
     <canvas id="canvas"></canvas>
-
-    <!-- ===== NEW FEATURE: Camera color/vignette filter overlay ===== -->
-    <div class="camera-filter-overlay"></div>
-
-    <!-- ===== NEW FEATURE: Error / status overlay ===== -->
-    <div id="status-overlay" class="status-overlay" hidden></div>
 
 </div>
 
