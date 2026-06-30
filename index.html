@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediaPipe Hand Tracking</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
+</head>
+
+<body>
+
+<div class="camera-container">
+    <div id="error-message" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #ff3333; font-family: monospace; font-weight: bold; background: rgba(0,0,0,0.8); padding: 15px; border-radius: 8px; z-index: 10; display: none; text-align: center; border: 1px solid #ff3333;"></div>
+    
+    <video id="video" autoplay playsinline></video>
+    <canvas id="canvas"></canvas>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
