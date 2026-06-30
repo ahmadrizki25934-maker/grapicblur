@@ -10,16 +10,24 @@
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<!-- ===== NEW FEATURE: Face Detection ===== -->
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
 </head>
 
 <body>
 
 <div class="camera-container">
-    <div id="error-message" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #ff3333; font-family: monospace; font-weight: bold; background: rgba(0,0,0,0.8); padding: 15px; border-radius: 8px; z-index: 10; display: none; text-align: center; border: 1px solid #ff3333;"></div>
-    
-    <video id="video" autoplay playsinline></video>
+
+    <video id="video" autoplay playsinline muted></video>
+
     <canvas id="canvas"></canvas>
+
+    <!-- ===== NEW FEATURE: Camera color/vignette filter overlay ===== -->
+    <div class="camera-filter-overlay"></div>
+
+    <!-- ===== NEW FEATURE: Error / status overlay ===== -->
+    <div id="status-overlay" class="status-overlay" hidden></div>
+
 </div>
 
 <script src="script.js"></script>
