@@ -5,41 +5,106 @@
 }
 
 body{
+
     background:#000;
     display:flex;
     justify-content:center;
     align-items:center;
     height:100vh;
-    overflow: hidden;
+    font-family:"Consolas","Courier New",monospace;
+
 }
 
 .camera-container{
+
     position:relative;
     width:900px;
     aspect-ratio:16/9;
-    /* ===== CYBER HUD FILTER ===== */
-    box-shadow: 0 0 30px rgba(0, 255, 128, 0.15);
-    border: 1px solid rgba(0, 255, 128, 0.2);
-    overflow: hidden;
-    border-radius: 20px;
+    max-width:100vw;
+    max-height:100vh;
+
 }
 
-/* Modifikasi filter visual kamera tanpa merusak performa hardware */
 video{
+
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     border-radius:20px;
+
     transform:scaleX(-1);
-    /* ===== CAMERA FILTER (Greenish, Contrast, Vignette) ===== */
-    filter: hue-rotate(45deg) contrast(1.1) brightness(0.95);
+
+    filter:contrast(1.05) saturate(1.05);
+
 }
 
 canvas{
+
     position:absolute;
+
     inset:0;
+
     width:100%;
     height:100%;
+
     pointer-events:none;
+
     transform: scaleX(-1);
+
+}
+
+/* ===== NEW FEATURE: Camera color filter / vignette / noise overlay ===== */
+.camera-filter-overlay{
+
+    position:absolute;
+    inset:0;
+    border-radius:20px;
+    pointer-events:none;
+
+    background:
+        radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%),
+        linear-gradient(rgba(0,255,150,0.04), rgba(0,255,150,0.04));
+
+}
+
+/* ===== NEW FEATURE: Status / error overlay ===== */
+.status-overlay{
+
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:24px;
+    color:#ff5555;
+    font-size:16px;
+    background:rgba(0,0,0,0.75);
+    border-radius:20px;
+    z-index:10;
+
+}
+
+/* ===== NEW FEATURE: Responsive layout ===== */
+@media (max-width: 960px){
+
+    .camera-container{
+        width:95vw;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    .camera-container{
+        width:96vw;
+        aspect-ratio:4/3;
+    }
+
+    .status-overlay{
+        font-size:13px;
+    }
+
 }
