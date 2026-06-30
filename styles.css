@@ -11,7 +11,6 @@ body{
     justify-content:center;
     align-items:center;
     height:100vh;
-    font-family:"Consolas","Courier New",monospace;
 
 }
 
@@ -20,8 +19,6 @@ body{
     position:relative;
     width:900px;
     aspect-ratio:16/9;
-    max-width:100vw;
-    max-height:100vh;
 
 }
 
@@ -35,8 +32,6 @@ video{
     border-radius:20px;
 
     transform:scaleX(-1);
-
-    filter:contrast(1.05) saturate(1.05);
 
 }
 
@@ -52,59 +47,5 @@ canvas{
     pointer-events:none;
 
     transform: scaleX(-1);
-
-}
-
-/* ===== NEW FEATURE: Camera color filter / vignette / noise overlay ===== */
-.camera-filter-overlay{
-
-    position:absolute;
-    inset:0;
-    border-radius:20px;
-    pointer-events:none;
-
-    background:
-        radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%),
-        linear-gradient(rgba(0,255,150,0.04), rgba(0,255,150,0.04));
-
-}
-
-/* ===== NEW FEATURE: Status / error overlay ===== */
-.status-overlay{
-
-    position:absolute;
-    inset:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:24px;
-    color:#ff5555;
-    font-size:16px;
-    background:rgba(0,0,0,0.75);
-    border-radius:20px;
-    z-index:10;
-
-}
-
-/* ===== NEW FEATURE: Responsive layout ===== */
-@media (max-width: 960px){
-
-    .camera-container{
-        width:95vw;
-    }
-
-}
-
-@media (max-width: 600px){
-
-    .camera-container{
-        width:96vw;
-        aspect-ratio:4/3;
-    }
-
-    .status-overlay{
-        font-size:13px;
-    }
 
 }
